@@ -20,7 +20,12 @@ module.exports = function (app) {
                 return console.log(error);
             }
             var notes = JSON.parse(data);
-            last_id = notes[notes.length - 1].id;
+            var last_id;
+            if (notes.length === 0) {
+                last_id = 0;
+            } else {
+                last_id = notes[notes.length - 1].id
+            }
             new_note.id = last_id + 1;
             notes.push(new_note);
             res.send(new_note);
@@ -39,7 +44,29 @@ module.exports = function (app) {
 
     });
 
-    app.delete("api/notes/:id", function (req, res) {
-        // get id character
+    app.delete("/api/notes/:id", function (req, res) {
+        var id = req.params.id;
+        fs.readFile(__dirname + "/../db/db.json", "utf8", function (error, data) {
+            if (error) {
+                return console.log(error);
+            }
+            var notes = JSON.parse(data);
+
+            console.log(notes);
+            console.log(id);
+
+            new_notes = notes.filter((note) => note.id != id);
+
+            console.log(new_notes);
+            res.send(new_notes);
+            fs.writeFile(__dirname + "/../db/db.json", JSON.stringify(new_notes), function (err) {
+
+                if (err) {
+                    return console.log(err);
+                }
+                console.log("Success!");
+
+            });
+        })
     });
 };

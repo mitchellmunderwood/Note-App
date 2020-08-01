@@ -20,8 +20,10 @@ module.exports = function (app) {
                 return console.log(error);
             }
             var notes = JSON.parse(data);
+            last_id = notes[notes.length - 1].id;
+            new_note.id = last_id + 1;
             notes.push(new_note);
-            // res.send(JSON.parse(notes));
+            res.send(new_note);
 
 
             fs.writeFile(__dirname + "/../db/db.json", JSON.stringify(notes), function (err) {

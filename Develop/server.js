@@ -6,6 +6,8 @@ var PORT = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// required to ensure proper loading of css and javascript with other files
 app.use(express.static('public'));
 
 require("./routes/apiRoutes")(app);

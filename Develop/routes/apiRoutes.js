@@ -3,16 +3,17 @@ var path = require("path");
 
 module.exports = function (app) {
 
+    // produces an array of notes to the front end
     app.get("/api/notes", function (req, res) {
         fs.readFile(__dirname + "/../db/db.json", "utf8", function (error, data) {
             if (error) {
                 return console.log(error);
             }
             res.send(JSON.parse(data));
-            // console.log(JSON.parse(data));
         });
     });
 
+    // posts a newly written note to the file
     app.post("/api/notes", function (req, res) {
         var new_note = req.body;
         fs.readFile(__dirname + "/../db/db.json", "utf8", function (error, data) {
@@ -44,6 +45,7 @@ module.exports = function (app) {
 
     });
 
+    // deletes a specific notes from the file
     app.delete("/api/notes/:id", function (req, res) {
         var id = req.params.id;
         fs.readFile(__dirname + "/../db/db.json", "utf8", function (error, data) {

@@ -81,13 +81,13 @@ Note-App is licensed under the terms of the [MIT License](https://opensource.org
     <img src="https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=blue"
          alt="JavaSript">
     <!-- <img src="https://img.shields.io/badge/Code-Handlebars-informational?style=flat&logo=handlebars&logoColor=white&color=blue"
-         alt="Express"> -->
-    <!-- <img src="https://img.shields.io/badge/Code-Express-informational?style=flat&logo=express&logoColor=white&color=blue"
-         alt="Express"> -->
-    <!-- <img src="https://img.shields.io/badge/Code-Node-informational?style=flat&logo=node&logoColor=white&color=blue"
-         alt="Node"> -->
+         alt="Handlebars"> -->
+    <img src="https://img.shields.io/badge/Code-Express-informational?style=flat&logo=express&logoColor=white&color=blue"
+         alt="Express">
+    <img src="https://img.shields.io/badge/Code-Node-informational?style=flat&logo=node&logoColor=white&color=blue"
+         alt="Node">
     <!-- <img src="https://img.shields.io/badge/Data-mySQL-informational?style=flat&logo=mysql&logoColor=white&color=blue"
-         alt="Node"> -->
+         alt="mySQL"> -->
 </p>
 
 <!-- Open Source Tools:
